@@ -13,7 +13,7 @@ object Form1: TForm1
   Position = poDefaultSizeOnly
   SessionProperties = 'cbPort.Items;cbPort.Text;dlgESPtool.Text;edOffset.Text;edSize.Text;Height;Memo1.Font;Width;WindowState;OpenDialog1.InitialDir;SaveDialog1.InitialDir'
   ShowHint = True
-  LCLVersion = '2.2.4.0'
+  LCLVersion = '2.2.6.0'
   object Memo1: TMemo
     Left = 0
     Height = 340
@@ -45,15 +45,15 @@ object Form1: TForm1
     object tsFlasher: TTabSheet
       Caption = 'tsFlasher'
       ClientHeight = 234
-      ClientWidth = 732
+      ClientWidth = 730
       object gbFlash: TGroupBox
         Left = 8
         Height = 200
         Top = 16
         Width = 424
         Caption = 'Flash'
-        ClientHeight = 178
-        ClientWidth = 420
+        ClientHeight = 198
+        ClientWidth = 422
         ParentBackground = False
         ParentColor = False
         TabOrder = 0
@@ -79,10 +79,10 @@ object Form1: TForm1
         end
         object edOffset: TLabeledEdit
           Left = 24
-          Height = 25
+          Height = 28
           Top = 24
           Width = 184
-          EditLabel.Height = 17
+          EditLabel.Height = 16
           EditLabel.Width = 184
           EditLabel.Caption = 'Offset'
           EditLabel.ParentColor = False
@@ -91,10 +91,10 @@ object Form1: TForm1
         end
         object edSize: TLabeledEdit
           Left = 24
-          Height = 25
+          Height = 28
           Top = 80
           Width = 184
-          EditLabel.Height = 17
+          EditLabel.Height = 16
           EditLabel.Width = 184
           EditLabel.Caption = 'Size'
           EditLabel.ParentColor = False
@@ -150,8 +150,8 @@ object Form1: TForm1
         Top = 16
         Width = 144
         Caption = 'Info'
-        ClientHeight = 178
-        ClientWidth = 140
+        ClientHeight = 183
+        ClientWidth = 142
         ParentBackground = False
         ParentColor = False
         TabOrder = 1
@@ -191,25 +191,25 @@ object Form1: TForm1
       end
       object lblPortInfo: TLabel
         Left = 608
-        Height = 17
+        Height = 16
         Top = 16
-        Width = 24
+        Width = 26
         Caption = 'Port'
         ParentColor = False
       end
       object lblESP: TLabel
         Left = 608
-        Height = 17
+        Height = 16
         Top = 48
-        Width = 21
+        Width = 23
         Caption = 'ESP'
         ParentColor = False
       end
       object lblWait: TLabel
         Left = 608
-        Height = 37
+        Height = 32
         Top = 80
-        Width = 84
+        Width = 86
         Caption = 'lblWait'
         Font.Color = clRed
         Font.Height = -27
@@ -231,13 +231,13 @@ object Form1: TForm1
     object tsSettings: TTabSheet
       Caption = 'tsSettings'
       ClientHeight = 234
-      ClientWidth = 732
+      ClientWidth = 730
       ParentFont = False
       object dlgESPtool: TDirectoryEdit
         Left = 16
-        Height = 25
+        Height = 28
         Top = 32
-        Width = 470
+        Width = 468
         ShowHidden = False
         ButtonWidth = 23
         NumGlyphs = 1
@@ -247,26 +247,26 @@ object Form1: TForm1
       end
       object lblESPTool: TLabel
         Left = 16
-        Height = 17
+        Height = 16
         Top = 8
-        Width = 60
+        Width = 66
         Caption = 'lblESPTool'
         ParentColor = False
       end
       object lblPort: TLabel
         Left = 16
-        Height = 17
+        Height = 16
         Top = 112
-        Width = 38
+        Width = 42
         Caption = 'lblPort'
         ParentColor = False
       end
       object cbPort: TComboBox
         Left = 16
-        Height = 25
+        Height = 28
         Top = 136
         Width = 188
-        ItemHeight = 17
+        ItemHeight = 0
         OnEditingDone = cbPortEditingDone
         TabOrder = 1
       end
@@ -280,7 +280,7 @@ object Form1: TForm1
         TabOrder = 2
       end
       object btnTest: TButton
-        Left = 411
+        Left = 409
         Height = 28
         Top = 136
         Width = 75
@@ -291,9 +291,9 @@ object Form1: TForm1
       end
       object lblDownload: TLabel
         Left = 408
-        Height = 17
+        Height = 16
         Top = 72
-        Width = 59
+        Width = 63
         Caption = 'Download'
         Font.Color = clNavy
         Font.Style = [fsUnderline]
@@ -305,9 +305,9 @@ object Form1: TForm1
       end
       object lblDocu: TLabel
         Left = 16
-        Height = 17
+        Height = 16
         Top = 72
-        Width = 44
+        Width = 48
         Caption = 'lblDocu'
         Font.Color = clNavy
         Font.Style = [fsUnderline]
@@ -318,7 +318,7 @@ object Form1: TForm1
         OnMouseLeave = lblDocuMouseLeave
       end
       object imgLazarus: TImage
-        Left = 622
+        Left = 620
         Height = 104
         Top = 120
         Width = 104
@@ -850,7 +850,7 @@ object Form1: TForm1
         }
       end
       object imgESP: TImage
-        Left = 622
+        Left = 620
         Height = 104
         Top = 8
         Width = 104

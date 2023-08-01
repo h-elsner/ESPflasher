@@ -14,7 +14,7 @@ resourcestring                                     {deutsch}
   capRead='FW &lesen';
   hntRead='Firmware auf ESP auslesen. Offset normalerweise Null und Größe automatisch (ALL). Größe und Offset kann aber abweichend angegeben wwerden. Der Dateiname wird abgefragt.';
   capImageInfo='Image Info';
-  hntImageInfo='Ifo über das FW Image auslesen. Der Dateiname wird abgefragt.';
+  hntImageInfo='Info über das FW Image auslesen. Der Dateiname wird abgefragt.';
   capErase='Erase all';
   hntErase='Den ganzen Flashspeicher (0x0000 bis ALL) löschen. Besser vorher Firmware auslesen.';
   capClose='&Beenden';
@@ -29,7 +29,7 @@ resourcestring                                     {deutsch}
   hntSize='Speichergröße zum Lesen oder Löschen.';
   hntOffset='Startadresse/Offset zum Lesen, Speichern oder Löschen.';
   capRegion='Erase Region';
-  hntRegion='Teile des Flashspeichers löschen. Startadresse und Größe müssen Vielfache von 0x1000 bzw. 4096 sein. ALL bei Größe bedeutet bis zum Ende des Flashspeichers';
+  hntRegion='Teile des Flashspeichers löschen. Startadresse und Größe müssen Vielfache von 0x1000 bzw. 4096 sein. ALL bei Größe bedeutet bis zum Ende des Flashspeichers.';
   errTool1='Das Espressif ESPtool muss installiert sein.';
   errTool2='Pfad zum Tool nicht gefunden. ESPtool bitte installieren, siehe Download-Link.';
 

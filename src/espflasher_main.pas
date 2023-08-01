@@ -138,7 +138,8 @@ type
     procedure Execute(header: string; params: TStringList);
   end;
 
-{$I ESPflasher_de.inc}
+  { $I ESPflasher_de.inc}
+  {$I ESPflasher_en.inc}
 
 var
   Form1: TForm1;
