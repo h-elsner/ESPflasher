@@ -4,4 +4,5 @@ This tool should be self-explained. All controls will show hints to explain what
 Of course, esptool from Espressif have to be installed.
 ![Screenshot settings](settings.png)
 ![Screenshot esptool GUI](flash.png)
+
 Only tested with ESP8266.
