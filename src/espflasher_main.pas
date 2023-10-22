@@ -309,7 +309,7 @@ begin
   cmd:=TProcess.Create(nil);
   s:='';
   try
-    cmd.Options:=cmd.Options+[poWaitOnExit, poUsePipes];
+    cmd.Options:=cmd.Options+[poWaitOnExit, poUsePipes, poNoConsole];
     cmd.Executable:=IncludeTrailingPathDelimiter(dlgESPtool.Text)+esptool;
     cmd.Parameters.Assign(params);
     cmd.Execute;

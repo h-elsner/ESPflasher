@@ -1,6 +1,6 @@
 resourcestring                                     {deutsch}
 
-  capForm='GUI für Espressif ESPtool';
+  capForm='GUI für Espressif ESPTOOL';
   capESPtool='Pfad zum ESPtool';
   capPort='Schnittstelle zum ESP modul';
   capSettings='Einstellungen';
@@ -10,9 +10,13 @@ resourcestring                                     {deutsch}
   capChip='Chip-ID';
   hntChip='Auslesen der Chip-ID.';
   capWrite='F&W schreiben';
-  hntWrite='Firmware auf ESP schreiben. Offset normalerweise Null, kann aber abweichend in hex (0x100000 = 1MB) oder dezimal angegeben werden. Der Dateiname wird abgefragt.';
+  hntWrite='Firmware auf ESP schreiben. Offset normalerweise Null,'+lineending+
+           'kann aber abweichend in hex (0x100000 = 1MB) oder dezimal angegeben werden.'+lineending+
+           'Der Dateiname wird abgefragt.';
   capRead='FW &lesen';
-  hntRead='Firmware auf ESP auslesen. Offset normalerweise Null und Größe automatisch (ALL). Größe und Offset kann aber abweichend angegeben wwerden. Der Dateiname wird abgefragt.';
+  hntRead='Firmware auf ESP auslesen. Offset normalerweise Null und Größe automatisch (ALL).'+lineending+
+           'Größe und Offset kann aber abweichend angegeben wwerden.'+lineending+
+           'Der Dateiname wird abgefragt.';
   capImageInfo='Image Info';
   hntImageInfo='Info über das FW Image auslesen. Der Dateiname wird abgefragt.';
   capErase='Erase all';
@@ -29,7 +33,9 @@ resourcestring                                     {deutsch}
   hntSize='Speichergröße zum Lesen oder Löschen.';
   hntOffset='Startadresse/Offset zum Lesen, Speichern oder Löschen.';
   capRegion='Erase Region';
-  hntRegion='Teile des Flashspeichers löschen. Startadresse und Größe müssen Vielfache von 0x1000 bzw. 4096 sein. ALL bei Größe bedeutet bis zum Ende des Flashspeichers.';
+  hntRegion='Teile des Flashspeichers löschen.'+lineending+
+           'Startadresse und Größe müssen Vielfache von 0x1000 bzw. 4096 sein.'+lineending+
+           'ALL bei Größe bedeutet bis zum Ende des Flashspeichers.';
   errTool1='Das Espressif ESPtool muss installiert sein.';
   errTool2='Pfad zum Tool nicht gefunden. ESPtool bitte installieren, siehe Download-Link.';
 

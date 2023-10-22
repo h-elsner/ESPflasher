@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 1640
+  Left = 1676
   Height = 604
-  Top = 150
+  Top = 130
   Width = 740
   Caption = 'Form1'
   ClientHeight = 604
@@ -52,7 +52,7 @@ object Form1: TForm1
         Top = 16
         Width = 424
         Caption = 'Flash'
-        ClientHeight = 198
+        ClientHeight = 183
         ClientWidth = 422
         ParentBackground = False
         ParentColor = False
@@ -219,7 +219,7 @@ object Form1: TForm1
       object btnClose: TBitBtn
         Left = 608
         Height = 40
-        Top = 160
+        Top = 176
         Width = 107
         Caption = 'btnClose'
         Images = ImageList1
