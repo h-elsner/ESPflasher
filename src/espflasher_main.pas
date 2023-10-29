@@ -58,10 +58,6 @@ uses
   Classes, SysUtils, Forms, Controls, Graphics, Dialogs, ComCtrls, EditBtn,
   StdCtrls, XMLPropStorage, ExtCtrls, Buttons, Process, Types, lclintf, synaser;
 
-{$IFDEF WINDOWS}
-//  uses synaser;
-{$ENDIF}
-
 type
 
   { TForm1 }
@@ -88,6 +84,7 @@ type
     imgLazarus: TImage;
     ImageList1: TImageList;
     imgESP: TImage;
+    Label1: TLabel;
     lblDocu: TLabel;
     lblDownload: TLabel;
     lblESP: TLabel;
@@ -178,6 +175,35 @@ begin
     ml.Items.Delete(MaxAnzahl);
 end;
 
+procedure LinkEnter(lbl: TLabel);
+begin
+  lbl.Font.Style:=lbl.Font.Style+[fsBold];
+end;
+
+procedure LinkLeave(lbl: TLabel);
+begin
+  lbl.Font.Style:=lbl.Font.Style-[fsBold];
+end;
+
+procedure LinkClick(lbl: TLabel; clr: TColor=clPurple);
+begin
+  if OpenURL(lbl.Hint) then
+    lbl.Font.Color:=clr;
+end;
+
+procedure SetAsLink(lbl: TLabel; cap: string; link: string=''; clr: TColor=clNavy);
+begin
+  if link='' then
+    lbl.Hint:=cap
+  else
+    lbl.Hint:=link;
+  lbl.Caption:=cap;
+  lbl.ParentColor:=false;
+  lbl.ParentFont:=false;
+  lbl.Font.Color:=clr;
+  lbl.Font.Style:=[fsUnderline];
+end;
+
 procedure TForm1.FormCreate(Sender: TObject);
 begin
   Caption:=capForm;
@@ -185,9 +211,9 @@ begin
   tsSettings.Caption:=capSettings;
   lblESPtool.Caption:=capESPtool+tab2+tab2+errTool1;
   dlgESPtool.TextHint:=capESPtool;
-  lblDocu.Caption:=capDocu;
-  lblDocu.Hint:=link_docu;
-  lblDownload.Hint:=link_download;
+  dlgESPtool.Hint:=capESPtool;
+  SetAsLink(lblDocu, capDocu, link_docu);
+  SetAsLink(lblDownload, capDownload, link_download);
   lblPort.Caption:=capPort;
   cbPort.Text:=default_port;
   lblPortInfo.Caption:=cbPort.Text;
@@ -218,17 +244,11 @@ begin
   SaveDialog1.Title:=titRead;
   edOffset.Hint:=hntOffset;
   edSize.Hint:=hntSize;
-
-{$IFDEF LINUX}                                                                  {Bei LINUX GroupBox besser sichtbar machen}
-  gbInfo.Color:=clMoneyGreen;
-  gbFlash.Color:=clSilver;
-{$ENDIF}
-
 end;
 
 procedure TForm1.imgESPClick(Sender: TObject);
 begin
-  OpenURL(link_docu);
+  LinkClick(lblDocu);
 end;
 
 procedure TForm1.imgLazarusClick(Sender: TObject);
@@ -238,34 +258,32 @@ end;
 
 procedure TForm1.lblDocuClick(Sender: TObject);                                 {URL aufrufen}
 begin
-  if OpenURL(link_docu) then
-    lblDocu.Font.Color:=clPurple;
+  linkClick(lblDocu);
 end;
 
 procedure TForm1.lblDocuMouseEnter(Sender: TObject);                            {Link animieren}
 begin
-  lblDocu.Font.Style:=lblDocu.Font.Style+[fsBold];
+  LinkEnter(lblDocu);
 end;
 
 procedure TForm1.lblDocuMouseLeave(Sender: TObject);
 begin
-  lblDocu.Font.Style:=lblDocu.Font.Style-[fsBold];
+  LinkLeave(lblDocu);
 end;
 
 procedure TForm1.lblDownloadClick(Sender: TObject);
 begin
-  if OpenURL(link_download) then
-    lblDownload.Font.Color:=clPurple;
+  LinkClick(lblDownload);
 end;
 
 procedure TForm1.lblDownloadMouseEnter(Sender: TObject);
 begin
-  lblDownload.Font.Style:=lblDownload.Font.Style+[fsBold];
+  LinkEnter(lblDownload);
 end;
 
 procedure TForm1.lblDownloadMouseLeave(Sender: TObject);
 begin
-  lblDownload.Font.Style:=lblDownload.Font.Style-[fsBold];
+  LinkLeave(lblDownload);
 end;
 
 procedure TForm1.Memo1MouseUp(Sender: TObject; Button: TMouseButton;            {Protokoll löschen}
@@ -471,6 +489,7 @@ begin
   if OpenDialog1.Execute then begin
     Screen.Cursor:=crHourGlass;
     params:=TStringList.Create;
+    Caption:=capForm+tab2+ExtractFileName(OpenDialog1.FileName);
     try
       header:='write_flash';
       params.Add('-p');

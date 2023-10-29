@@ -1,25 +1,25 @@
 object Form1: TForm1
-  Left = 1676
-  Height = 604
-  Top = 130
+  Left = 1537
+  Height = 519
+  Top = 144
   Width = 740
   Caption = 'Form1'
-  ClientHeight = 604
+  ClientHeight = 519
   ClientWidth = 740
   Constraints.MinHeight = 500
   Constraints.MinWidth = 740
   OnActivate = FormActivate
   OnCreate = FormCreate
   Position = poDefaultSizeOnly
-  SessionProperties = 'cbPort.Items;cbPort.Text;dlgESPtool.Text;edOffset.Text;edSize.Text;Height;Memo1.Font;Width;WindowState;OpenDialog1.InitialDir;SaveDialog1.InitialDir'
+  SessionProperties = 'cbPort.Items;cbPort.Text;dlgESPtool.Text;edOffset.Text;edSize.Text;Height;Memo1.Font;OpenDialog1.InitialDir;SaveDialog1.InitialDir;Width;WindowState;OpenDialog1.FileName'
   ShowHint = True
   LCLVersion = '2.2.6.0'
   object Memo1: TMemo
-    Left = 0
-    Height = 340
-    Top = 264
-    Width = 740
-    Align = alClient
+    Left = 8
+    Height = 236
+    Top = 272
+    Width = 720
+    Anchors = [akTop, akLeft, akRight, akBottom]
     Font.Height = -13
     Font.Name = 'Liberation Mono'
     Lines.Strings = (
@@ -39,6 +39,7 @@ object Form1: TForm1
     Width = 740
     ActivePage = tsSettings
     Align = alTop
+    ParentFont = False
     TabIndex = 1
     TabOrder = 1
     OnChange = PageControl1Change
@@ -46,6 +47,7 @@ object Form1: TForm1
       Caption = 'tsFlasher'
       ClientHeight = 234
       ClientWidth = 730
+      ParentFont = False
       object gbFlash: TGroupBox
         Left = 8
         Height = 200
@@ -219,7 +221,7 @@ object Form1: TForm1
       object btnClose: TBitBtn
         Left = 608
         Height = 40
-        Top = 176
+        Top = 160
         Width = 107
         Caption = 'btnClose'
         Images = ImageList1
@@ -254,7 +256,7 @@ object Form1: TForm1
         ParentColor = False
       end
       object lblPort: TLabel
-        Left = 16
+        Left = 112
         Height = 16
         Top = 112
         Width = 42
@@ -262,16 +264,16 @@ object Form1: TForm1
         ParentColor = False
       end
       object cbPort: TComboBox
-        Left = 16
+        Left = 112
         Height = 28
         Top = 136
-        Width = 188
+        Width = 212
         ItemHeight = 0
         OnEditingDone = cbPortEditingDone
         TabOrder = 1
       end
       object btnUSB: TButton
-        Left = 216
+        Left = 344
         Height = 28
         Top = 136
         Width = 75
@@ -280,11 +282,10 @@ object Form1: TForm1
         TabOrder = 2
       end
       object btnTest: TButton
-        Left = 409
+        Left = 16
         Height = 28
         Top = 136
         Width = 75
-        Anchors = [akTop, akRight]
         Caption = 'Test'
         OnClick = btnTestClick
         TabOrder = 3
@@ -295,10 +296,9 @@ object Form1: TForm1
         Top = 72
         Width = 63
         Caption = 'Download'
-        Font.Color = clNavy
-        Font.Style = [fsUnderline]
+        Color = clDefault
         ParentColor = False
-        ParentFont = False
+        Transparent = False
         OnClick = lblDownloadClick
         OnMouseEnter = lblDownloadMouseEnter
         OnMouseLeave = lblDownloadMouseLeave
@@ -309,8 +309,6 @@ object Form1: TForm1
         Top = 72
         Width = 48
         Caption = 'lblDocu'
-        Font.Color = clNavy
-        Font.Style = [fsUnderline]
         ParentColor = False
         ParentFont = False
         OnClick = lblDocuClick
@@ -1529,6 +1527,14 @@ object Form1: TForm1
           54C238C28F6284AAA2A82A764A32418ED32508827FEEB0E59FFF2524FC7FD850
           226388631E570000000049454E44AE426082
         }
+      end
+      object Label1: TLabel
+        Left = 71
+        Height = 16
+        Top = 209
+        Width = 41
+        Caption = 'Label1'
+        ParentColor = False
       end
     end
   end
