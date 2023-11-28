@@ -132,7 +132,7 @@ type
   private
 
   public
-    procedure Execute(header: string; params: TStringList);
+    procedure ExecuteIt(header: string; params: TStringList);
   end;
 
   { $I ESPflasher_de.inc}
@@ -312,7 +312,7 @@ begin
   Memo1.Lines.Clear;
 end;
 
-procedure TForm1.Execute(header: string; params: TStringList);                  {ESPtool Kommando ausführen}
+procedure TForm1.ExecuteIt(header: string; params: TStringList);                {ESPtool Kommando ausführen}
 var
   cmd: TProcess;
   outlist: TStringList;
@@ -379,7 +379,7 @@ begin
       params.Add(edOffset.Text);
       params.Add(edSize.Text);
       params.Add(SaveDialog1.FileName);
-      Execute(header+': '+ExtractFileName(SaveDialog1.FileName), params);
+      ExecuteIt(header+': '+ExtractFileName(SaveDialog1.FileName), params);
     finally
       params.Free;
     end;
@@ -399,7 +399,7 @@ begin
       params.Add(header);
       params.Add(edOffset.Text);
       params.Add(edSize.Text);
-      Execute(header, params);
+      ExecuteIt(header, params);
     finally
       params.Free;
     end;
@@ -420,7 +420,7 @@ begin
     try
       header:='version';
       param.Add(header);
-      Execute(header+': ', param);
+      ExecuteIt(header+': ', param);
 
 {$IFDEF LINUX}                                                                  {Ports for LINUX}
       cmd:=TProcess.Create(nil);
@@ -497,7 +497,7 @@ begin
       params.Add(header);
       params.Add(edOffset.Text);
       params.Add(OpenDialog1.FileName);
-      Execute(header+': '+ExtractFileName(OpenDialog1.FileName), params);
+      ExecuteIt(header+': '+ExtractFileName(OpenDialog1.FileName), params);
     finally
       params.Free;
     end;
@@ -537,7 +537,7 @@ begin
     params.Add(cbPort.Text);
     header:='chip_id';
     params.Add(header);
-    Execute(header, params);
+    ExecuteIt(header, params);
   finally
     params.Free;
   end;
@@ -555,7 +555,7 @@ begin
     params.Add(cbPort.Text);
     header:='flash_id';
     params.Add(header);
-    Execute(header, params);
+    ExecuteIt(header, params);
   finally
     params.Free;
   end;
@@ -575,7 +575,7 @@ begin
       params.Add(OpenDialog1.FileName);
       params.Add('-v');
       params.Add('2');
-      Execute(header+': '+ExtractFileName(OpenDialog1.FileName), params);
+      ExecuteIt(header+': '+ExtractFileName(OpenDialog1.FileName), params);
     finally
       params.Free;
     end;
@@ -593,7 +593,7 @@ begin
     params:=TStringList.Create;
     try
       params.Add(header);
-      Execute(header, params);
+      ExecuteIt(header, params);
     finally
       params.Free;
     end;

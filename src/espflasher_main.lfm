@@ -1,7 +1,7 @@
 object Form1: TForm1
-  Left = 1537
+  Left = 1653
   Height = 519
-  Top = 144
+  Top = 127
   Width = 740
   Caption = 'Form1'
   ClientHeight = 519
@@ -54,7 +54,7 @@ object Form1: TForm1
         Top = 16
         Width = 424
         Caption = 'Flash'
-        ClientHeight = 183
+        ClientHeight = 198
         ClientWidth = 422
         ParentBackground = False
         ParentColor = False
@@ -294,8 +294,8 @@ object Form1: TForm1
         Left = 408
         Height = 16
         Top = 72
-        Width = 63
-        Caption = 'Download'
+        Width = 12
+        Caption = 'dl'
         Color = clDefault
         ParentColor = False
         Transparent = False

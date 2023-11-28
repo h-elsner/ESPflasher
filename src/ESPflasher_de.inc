@@ -6,7 +6,7 @@ resourcestring                                     {deutsch}
   capSettings='Einstellungen';
   capFlasher='ESP Tool';
   capFlash='Flash-ID';
-  capDownload='Download';
+  capDownload='Download esptool';
   hntFlash='Info über Flashspeicher auslesen.';
   capChip='Chip-ID';
   hntChip='Auslesen der Chip-ID.';
