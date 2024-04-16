@@ -112,6 +112,7 @@ type
     procedure btnUSBClick(Sender: TObject);
     procedure btnWriteClick(Sender: TObject);
     procedure cbPortEditingDone(Sender: TObject);
+    procedure dlgESPtoolClick(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure imgESPClick(Sender: TObject);
@@ -132,6 +133,7 @@ type
   private
 
   public
+    procedure chmod_x;
     procedure ExecuteIt(header: string; params: TStringList);
   end;
 
@@ -508,6 +510,31 @@ procedure TForm1.cbPortEditingDone(Sender: TObject);
 begin
   Merkliste(cbPort, maxPorts);
 end;
+
+procedure TForm1.chmod_x;
+var
+  cmd: TProcess;
+
+begin
+  {$IFDEF LINUX}                                                                {Make esptool it executable for LINUX}
+    cmd:=TProcess.Create(nil);
+    try
+      cmd.Executable:='chmod';
+      cmd.Parameters.Clear;
+      cmd.Parameters.Add('+x');
+      cmd.Parameters.Add(IncludeTrailingPathDelimiter(dlgESPtool.Text)+'esptool');
+      cmd.Execute;                                                               {geht nicht mit wildcards, aber warum???}
+    finally
+      cmd.Free;
+    end;
+  {$ENDIF}
+end;
+
+procedure TForm1.dlgESPtoolClick(Sender: TObject);
+begin
+  chmod_x;
+end;
+
 
 procedure TForm1.FormActivate(Sender: TObject);
 begin
